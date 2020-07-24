@@ -1,4 +1,4 @@
-#include <ShiftRegister74HC595.h>
+#include <ShiftRegister74HC595.h> //Hay que descargar manualmente esta libreria para poder compilar
 #include <EEPROM.h>
 
 //Addresses
@@ -225,7 +225,6 @@ void wet_calibration_blink_leds() {
   }
 }
 
-
 void enter_menu() {
   menuTimeOut = 0;
   frame = 0;
@@ -256,6 +255,7 @@ void enter_menu() {
 
 void update_watering_threshold() {
   wateringThreshold = wateringThresholdLevel / 7.0;
+  Serial.println(wateringThreshold)
 }
 
 void setup() {
