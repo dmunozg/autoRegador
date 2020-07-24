@@ -51,8 +51,6 @@ void read_sensors() {
 
   for (int sensor = 0; sensor < 6; sensor++) {
     adjustedSensorsData[sensor] = (sensorsData[sensor] - calibratedWetState[sensor]) / (calibratedDryState[sensor] - calibratedWetState[sensor]);
-    Serial.print(sensorsData[sensor]);
-    Serial.print('\t');
   }
   Serial.println();
 
@@ -153,7 +151,6 @@ void left_button_function() {
     }
     pressedButtonTimer += 1;
     delay(1000 / 60);
-    Serial.println(pressedButtonTimer);
   }
   calibrate_wet_state();
   return;
@@ -169,7 +166,6 @@ void right_button_function() {
     }
     pressedButtonTimer += 1;
     delay(1000 / 60);
-    Serial.println(pressedButtonTimer);
   }
   calibrate_dry_state();
   return;
@@ -255,7 +251,6 @@ void enter_menu() {
     }
     delay(1000 / 60); //read states 60 times per second
     menuTimeOut += 0.02;
-    Serial.println(menuTimeOut);
   }
 }
 
