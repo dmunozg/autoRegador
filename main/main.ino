@@ -52,8 +52,6 @@ void read_sensors() {
   for (int sensor = 0; sensor < 6; sensor++) {
     adjustedSensorsData[sensor] = (sensorsData[sensor] - calibratedWetState[sensor]) / (calibratedDryState[sensor] - calibratedWetState[sensor]);
   }
-  Serial.println();
-
   Serial.print(adjustedSensorsData[0]);
   Serial.print('\t');
   Serial.print(adjustedSensorsData[1]);
@@ -255,7 +253,7 @@ void enter_menu() {
 
 void update_watering_threshold() {
   wateringThreshold = wateringThresholdLevel / 7.0;
-  Serial.println(wateringThreshold)
+  Serial.println(wateringThreshold);
 }
 
 void setup() {
